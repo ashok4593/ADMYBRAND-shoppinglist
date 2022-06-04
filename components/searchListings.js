@@ -18,10 +18,12 @@ const SearchListings = ({onSearchQueryChange, onListingAddition}) => {
   };
 
   const handleListingAddition = () => {
-    onListingAddition(searchQuery);
+    if(searchQuery){
+    onListingAddition({id: new Date().getTime(), name: searchQuery});
     setSearchQuery('');
     searchInput.current.blur();
-    console.log(searchQuery);
+    // console.log(searchQuery);
+    }
   };
 
   return (

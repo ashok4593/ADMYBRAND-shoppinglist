@@ -3,14 +3,14 @@ import {FlatList, StyleSheet} from 'react-native';
 import {HeaderTwo} from './textCompnents';
 
 const Listings = ({list}) => {
-  console.log(list);
+  // console.log(list);
   return (
     <FlatList
       data={list}
       renderItem={listItem => (
-        <HeaderTwo textStyle={styles.itemText}>{listItem.item}</HeaderTwo>
+        <HeaderTwo textStyle={styles.itemText}>{listItem.item.name}</HeaderTwo>
       )}
-      keyExtractor={item => item.index}
+      keyExtractor={item => item.id}
     />
   );
 };
